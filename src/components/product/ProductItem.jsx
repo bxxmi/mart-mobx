@@ -1,7 +1,9 @@
 import { Button, Col, FormGroup, Input, Label, Row } from "reactstrap";
 import { observer } from "mobx-react";
 
-const ProductItem = ({ id, name, price, productStore }) => {
+const ProductItem = ({ id, name, price, count, productStore }) => {
+  const selectProduct = productStore.productStore.productStore.selectProduct;
+
   return (
     <Row>
       <Col>
@@ -18,18 +20,13 @@ const ProductItem = ({ id, name, price, productStore }) => {
       </Col>
       <Col>
         <Row>
-          <Label>기능</Label>
-        </Row>
-        <Row>
-          <Button 
-            onClick={() => {
-              productStore.selectProduct({
-                id,
-                name,
-                price
-              })
-            }}
-          >
+          <Button onClick={() => {
+            selectProduct({
+              id,
+              name,
+              price
+            });
+          }}>
             담기
           </Button>
         </Row>

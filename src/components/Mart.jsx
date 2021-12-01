@@ -11,7 +11,7 @@ import ProductList from './product/ProductList';
 import BuyList from './buy/BuyList';
 import { observer } from "mobx-react";
 
-const Mart = ({ productStore }) => {
+const Mart = (productStore) => {
   return (
     <Container style={{ paddingTop: "30px" }}>
       <Row>
@@ -31,9 +31,9 @@ const Mart = ({ productStore }) => {
               <h3>장바구니</h3>
             </CardHeader>
             <CardBody>
-              <BuyList />
+              <BuyList productStore={productStore} />
             </CardBody>
-            <CardFooter>합계 : {productStore.totalPrice}</CardFooter>
+            <CardFooter>합계 : {productStore.productStore.totalPrice}</CardFooter>
           </Card>
         </Col>
       </Row>

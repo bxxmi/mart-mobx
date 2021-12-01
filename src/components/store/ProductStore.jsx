@@ -12,14 +12,14 @@ class ProductStore {
     });
   };
 
-  selectProduct = ({ productId, productName, productPrice }) => {
-   const selectedProduct = this.productList.find(product => productId === product.productId);
+  selectProduct = (item) => {
+    const selectedProduct = this.productList.find(product => item.productName === product.productName);
 
    if (!selectedProduct) {
      this.productList.push({
-      productId,
-      productName,
-      productPrice,
+      productId: item.productId,
+      productName: item.productName,
+      productPrice: item.productName,
       count: 1
      });
     } else {
