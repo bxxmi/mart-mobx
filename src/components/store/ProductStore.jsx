@@ -6,7 +6,7 @@ class ProductStore {
 
   constructor() {
     makeObservable(this, {
-      product: observable,
+      productList: observable,
       selectProduct: action,
       totalPrice: computed
     });
